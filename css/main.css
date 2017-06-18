@@ -1,10 +1,9 @@
 .container_m{
-	flex: 1;
 	padding-top: 2px;
 }
 
 .left_bar{
-	width: 18%;
+	width: 260px;
 	height: 100%;
 	min-width: 200px;
 	position: relative;
@@ -39,16 +38,78 @@
 
 .bar_head>label:nth-child(3){
 	margin-right: 10px;
-	cursor: pointer;
+	font-weight: bold;
 }
 
-#treeView{
-	height: 100%;
-	border: 1px solid #23907a;
+.nav_bar{
+	height:100%;
+	border-top:1px solid #cee8d8;
+	border-right:1px solid #31a59d;
+}
+.nav_bar .nav_item{
+	border-bottom:1px solid #fff;
+	cursor:pointer;
+	background-color:#fff;
+}
+.nav_bar .nav_parent{
+	position:relative;
+}
+.nav_bar .nav_parent > .nav_list{
+	display: none;
+}
+.nav_bar .nav_parent > .nav_title{
+	margin-bottom: 0;
+	padding-left:40px;
+	height:32px;
+	background-color:#31a59d;
+	line-height: 32px;
+	font-weight: bold;
+	color:#fff;
+}
+.nav_bar .nav_parent .iconfont{
+	position:absolute;
+	right:10px;
+	top:5px;
+	color:#fff;
+	transform:rotate(0);
+	-webkit-transform:rotate(0);
+	-moz-transform:rotate(0);
+	-o-transform:rotate(0);
+}
+.nav_bar .nav_parent.active .iconfont{
+	transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+}
+.nav_bar .nav_child{
+	position:relative;
+}
+.nav_bar .nav_child > .nav_title{
+	margin-bottom: 0;
+	padding-left:40px;
+	height:32px;
+	background-color:#fff;
+	line-height: 32px;
+	color:#333;
+}
+.nav_bar .nav_child.active .nav_title{
+	color:#31a59d;
+}
+.nav_bar .nav_child.active:before{
+	position:absolute;
+	content:'';
+	top:50%;
+	left:20px;
+	margin-top:-5px;
+	width:10px;
+	height:10px;
+	background-color:#31a59d;
+	border-radius: 100%;
 }
 
 .right_content{
-	width: 82%;
+	overflow: hidden;
 }
 
 .icon_tab{
@@ -70,3 +131,4 @@
 #myTabContent{
 	padding: 20px 10px;
 }
+
