@@ -67,3 +67,8 @@ html,body{height:100%;margin: 0 auto;}
 	border-radius: 4px;
 	padding: 0 15px;
 }
+
+.container_m{
+	flex: 1;
+	padding-top: 2px;
+}
