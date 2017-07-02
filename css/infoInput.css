@@ -2,12 +2,24 @@
 	padding: 10px;
 }
 
+.item_alignLeft{
+	width: auto;
+}
+
 .filtrate_item{
-	margin: 0 10px 12px 0;
+	margin: 0 20px 12px 0;
+}
+
+.long_width{
+	width: 360px;
+}
+
+.filtrate_item .long_select{
+	width: 255px;
 }
 
 .bottom_form .filtrate_item{
-	margin: 0 100px 12px 0;
+	margin: 0 90px 12px 0;
 }
 
 .btn_infoInput{
