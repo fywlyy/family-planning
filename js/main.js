@@ -12,11 +12,11 @@ $(function(){
           active: true
         },{
           name: '网上登记查询',
-          link: '#login',
+          link: '#flowChart',
           active: false
         },{
           name: '网上登记受理查询',
-          link: '#test',
+          link: '#scanID',
           active: false
         }
       ]
@@ -151,6 +151,8 @@ function renderNav(navData){
 function renderTab(linkArr){
   var tabHtml = '';
   var conHtml = '';
+  var $myTab =$("#myTab");
+  var $myTabContent =$("#myTabContent");
   for(var i = 0, length = linkArr.length; i < length; i++){
     tabHtml += '<li class="'+(linkArr[i].active ? 'active' : '')+'">'+
               '<a href="#'+linkArr[i].link+'" data-toggle="tab">'+
@@ -163,16 +165,34 @@ function renderTab(linkArr){
               '<iframe src="./'+linkArr[i].link+'.html" frameborder="0"></iframe>'+
           '</div>'      
   }
-  $("#myTab").html(tabHtml);
-  $("#myTabContent").html(conHtml);
+  $myTab.html(tabHtml);
+  $myTabContent.html(conHtml);
 
-  if(!$("#myTab").find("li.active").hasClass('active')){//默认选中第一个
-    $("#myTab").find("li").first().addClass('active');
-    $("#myTabContent").find(".tab-pane").first().addClass('active');
-
+  if(!$myTab.find("li.active").hasClass('active')){//默认选中第一个
+    $myTab.find("li").first().addClass('active');
+    $myTabContent.find(".tab-pane").first().addClass('active');
   }
 
-  $("#myTab").find('.icon_tab').on('click',function(){
+  $myTab.find('li').on('click',function(){
+    var link = $(this).find('a').attr('href');
+    if($(this).hasClass('active')){
+      return;
+    }else{
+      var $parent = $('.nav_parent').find('li[data-link="'+link+'"]').parent();
+
+      if(!$parent.parent().hasClass('active')){
+        $('.nav_parent.active').find('.nav_list').slideUp();
+      }
+      $('.nav_parent')
+        .find('.nav_child[data-link="'+link+'"]')
+        .click()
+        .parent()
+        .slideDown()
+        .parent()
+        .addClass('active');
+    }
+  })
+  $myTab.find('.icon_tab').on('click',function(){
     var index = $(this).data('index');
     linkArr.splice(index,1);
     renderTab(linkArr);
