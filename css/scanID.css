@@ -1,0 +1,17 @@
+.scan_ID{
+	padding: 10px;
+}
+
+.btn_scan{
+	width: 100px;
+	height: 30px;
+	background: #238f7b;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.form_content>p{
+	color: #33a49d;
+	font-size: 20px;
+	text-align: center;
+}

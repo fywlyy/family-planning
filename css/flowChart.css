@@ -1,0 +1,17 @@
+.flow_chart{
+	padding: 10px;
+}
+
+.newMes{
+	color: red;
+}
+
+.form_content>img{
+	width: 100%;
+	height: 100%;
+}
+
+.form_content>p{
+	padding: 0;
+	margin: 0;
+}
