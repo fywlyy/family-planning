@@ -70,7 +70,7 @@
 }
 .filtrate_item .time_component .iconfont{
 	font-size:14px;
-	color:#31a59d;
+	color:#ccc;
 	background-color: transparent;
 }
 .filtrate_item .time_component input{
@@ -85,7 +85,12 @@
 	width:140px;
 	height:20px;
 	border:1px solid #ccc;
+<<<<<<< HEAD
 	vertical-align: middle;	
+=======
+	vertical-align: middle;
+	cursor: pointer;	
+>>>>>>> 3fbaaeeb49dea780e9861c148cd85c0c010176a7
 }
 .filtrate_item .input_component input{
 	width:100%;
@@ -141,5 +146,8 @@
 .bottom_form{
 	border: 1px solid #238f7b;
 	padding: 20px;
+<<<<<<< HEAD
 	margin-top: 10px;
+=======
+>>>>>>> 3fbaaeeb49dea780e9861c148cd85c0c010176a7
 }
