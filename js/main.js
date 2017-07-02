@@ -88,6 +88,7 @@ $(function(){
   $('.nav_child').on('click',function(e){
     e.stopPropagation();
     var $myTab = $("#myTab");
+    var $myTabContent =$("#myTabContent");
     var hasSameLink = false;
     var link = $(this).data('link').slice(1);
     var name = $(this).find('.nav_title').text();
@@ -98,7 +99,10 @@ $(function(){
     $(this).addClass('active');
 
     if($myTab.find("li[data-link='#"+link+"']").hasClass('tab-item')){
-      $myTab.find("li[data-link='#"+link+"']").click();
+      $myTab.find('li').removeClass('active');
+      $myTab.find("li[data-link='#"+link+"']").addClass('active');
+      $myTabContent.find('.tab-pane').removeClass('active');
+      $myTabContent.find('.tab-pane[id="'+link+'"]').addClass('active');
       return;
     }
 
@@ -161,7 +165,7 @@ function renderTab(linkObj){
   $myTab.append(tabHtml);
   $myTabContent.append(conHtml);
 
-  $myTab.find('li').on('click',function(){
+  $myTab.find('li').last().on('click',function(){
     var link = $(this).data('link');
     if($(this).hasClass('active')){
       return;
@@ -171,6 +175,11 @@ function renderTab(linkObj){
       if(!$parent.parent().hasClass('active')){
         $('.nav_parent.active').find('.nav_list').slideUp();
       }
+
+      if($('.nav_parent').find('li[data-link="'+link+'"]').hasClass("active")){
+        return;
+      }
+
       $('.nav_parent')
         .find('.nav_child[data-link="'+link+'"]')
         .click()
