@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_iugm55owj431sjor.css">
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_atuz25jvk5yd5cdi.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-datetimepicker.min.css">
@@ -23,14 +23,14 @@
 				<div class="filtrate_item fl">
 					<span class="item_title">起始时间：</span>
 					<div class="time_component">
-						<input type="text">
+						<input class="date_picker startDate" name="timeGroup_1" type="text">
 						<span class="iconfont icon-riqi-copy"></span>
 					</div>
 				</div>
 				<div class="filtrate_item fl">
 					<span class="item_title">结束时间：</span>
 					<div class="time_component">
-						<input type="text">
+						<input class="date_picker endDate" name="timeGroup_1" type="text">
 						<span class="iconfont icon-riqi-copy"></span>
 					</div>
 				</div>
@@ -58,6 +58,12 @@
 						<input type="text">
 					</div>
 				</div>
+				<div class="filtrate_item fl">
+					<span class="item_title">男方证件号：</span>
+					<div class="input_component">
+						<input type="text">
+					</div>
+				</div>				
 			</div>		
 			<div class="btns-module">
 				<button class="button">查询</button>
@@ -67,5 +73,7 @@
 		</form>
 	</div>
 	<script type="text/javascript" src="./Plugin/jquery.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="./js/base.js"></script>
 </body>
 </html>
