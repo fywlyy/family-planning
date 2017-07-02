@@ -165,7 +165,8 @@ function renderTab(linkObj){
   $myTab.append(tabHtml);
   $myTabContent.append(conHtml);
 
-  $myTab.find('li').last().on('click',function(){
+  $myTab.find('li').off('click',function(){});
+  $myTab.find('li').on('click',function(){
     var link = $(this).data('link');
     if($(this).hasClass('active')){
       return;
