@@ -72,3 +72,19 @@ html,body{height:100%;margin: 0 auto;}
 	flex: 1;
 	padding-top: 2px;
 }
+
+/*表单外框的样式*/
+.my_form{
+	margin-top: 10px;
+	border: 1px solid #ccc;
+}
+
+.form_head{
+	height: 20px;
+	background: #ccc;
+	padding-left: 10px;
+}
+
+.form_content{
+	padding: 25px 10px;
+}
