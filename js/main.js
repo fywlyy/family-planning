@@ -87,6 +87,7 @@ $(function(){
   });
   $('.nav_child').on('click',function(e){
     e.stopPropagation();
+    var $myTab = $("#myTab");
     var hasSameLink = false;
     var link = $(this).data('link').slice(1);
     var name = $(this).find('.nav_title').text();
@@ -96,24 +97,16 @@ $(function(){
     $('.nav_parent').find('.nav_child').removeClass('active');
     $(this).addClass('active');
 
-    for(var i = 0, length = linkArr.length; i < length; i++){
-      linkArr[i].active = false;
-      if(link == linkArr[i].link){
-        linkArr[i].active = true;
-        hasSameLink = true;
-      }
-    }
-    if(hasSameLink){
-      renderTab(linkArr);
+    if($myTab.find("li[data-link='#"+link+"']").hasClass('tab-item')){
+      $myTab.find("li[data-link='#"+link+"']").click();
       return;
     }
 
-    linkArr.push({
+    renderTab({//新增Tab
       link: link,
       name: name,
       active: true
-    })
-    renderTab(linkArr);
+    });
   })
 
 
@@ -147,34 +140,29 @@ function renderNav(navData){
   return html;
 }
 
-/*iframe Tab列表渲染*/
-function renderTab(linkArr){
+/*iframe 新增Tab列表渲染*/
+function renderTab(linkObj){
   var tabHtml = '';
   var conHtml = '';
   var $myTab =$("#myTab");
   var $myTabContent =$("#myTabContent");
-  for(var i = 0, length = linkArr.length; i < length; i++){
-    tabHtml += '<li class="'+(linkArr[i].active ? 'active' : '')+'">'+
-              '<a href="#'+linkArr[i].link+'" data-toggle="tab">'+
-                  linkArr[i].name+
-              '</a>'+
-              '<span class="icon_tab" data-index="'+i+'">×</span>'+
-          '</li>';
 
-    conHtml += '<div class="tab-pane fade in'+(linkArr[i].active ? ' active' : '')+'" id="'+linkArr[i].link+'">'+
-              '<iframe src="./'+linkArr[i].link+'.html" frameborder="0"></iframe>'+
-          '</div>'      
-  }
-  $myTab.html(tabHtml);
-  $myTabContent.html(conHtml);
+  $myTab.find('li.active').removeClass('active');
+  tabHtml += '<li class="tab-item active" data-link="#'+linkObj.link+'">'+
+            '<a href="#'+linkObj.link+'" data-toggle="tab">'+
+                linkObj.name+
+            '</a>'+
+            '<span class="icon_tab">×</span>'+
+        '</li>';
 
-  if(!$myTab.find("li.active").hasClass('active')){//默认选中第一个
-    $myTab.find("li").first().addClass('active');
-    $myTabContent.find(".tab-pane").first().addClass('active');
-  }
+  conHtml += '<div class="tab-pane fade in active" id="'+linkObj.link+'">'+
+            '<iframe src="./'+linkObj.link+'.html" frameborder="0"></iframe>'+
+        '</div>'      
+  $myTab.append(tabHtml);
+  $myTabContent.append(conHtml);
 
   $myTab.find('li').on('click',function(){
-    var link = $(this).find('a').attr('href');
+    var link = $(this).data('link');
     if($(this).hasClass('active')){
       return;
     }else{
@@ -193,9 +181,7 @@ function renderTab(linkArr){
     }
   })
   $myTab.find('.icon_tab').on('click',function(){
-    var index = $(this).data('index');
-    linkArr.splice(index,1);
-    renderTab(linkArr);
+    $(this).parent().remove();
     if($(this).parent().hasClass('active')){
       $('.nav_parent').first().find('.nav_child').first().click();
     }
