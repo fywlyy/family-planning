@@ -1,10 +1,18 @@
 .infoInput{
 	padding: 10px;
-	font-size: 15px;
 }
 
 .filtrate_item{
 	margin: 0 10px 12px 0;
+}
+
+.bottom_form .filtrate_item{
+	margin: 0 100px 12px 0;
+}
+
+.btn_infoInput{
+	display: inline-block;
+	padding: 0;
 }
 
 

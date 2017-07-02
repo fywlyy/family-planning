@@ -17,7 +17,7 @@
 	display: inline-block;
 	width:140px;
 	height:20px;
-	border:1px solid #31a59d;
+	border:1px solid #ccc;
 	vertical-align: middle;
 	cursor:pointer;
 }
@@ -56,13 +56,13 @@
 	display: inline-block;
 	width: 140px;
 	height:20px;
-	border:1px solid #31a59d;
+	border:1px solid #ccc;
 	vertical-align: middle;
 	cursor: pointer;
 }
 .filtrate_item .time_component .iconfont{
 	font-size:14px;
-	color:#31a59d;
+	color:#ccc;
 	background-color: transparent;
 }
 .filtrate_item .time_component input{
@@ -76,7 +76,7 @@
 	display: inline-block;
 	width:140px;
 	height:20px;
-	border:1px solid #31a59d;
+	border:1px solid #ccc;
 	vertical-align: middle;
 	cursor: pointer;	
 }
@@ -113,4 +113,9 @@
 
 .btn_form{
 	margin-top: 10px;
+}
+
+.bottom_form{
+	border: 1px solid #238f7b;
+	padding: 20px;
 }
