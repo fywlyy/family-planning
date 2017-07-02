@@ -21,6 +21,15 @@
 	vertical-align: middle;
 	cursor:pointer;
 }
+
+.filtrate_item .moreHeight{
+	height:30px;
+}
+
+.filtrate_item .moreWidth{
+	width: 300px;
+}
+
 .filtrate_item .iconfont{
 	position:absolute;
 	top:0;
@@ -34,6 +43,14 @@
 	background-color:#9bd3ab;
 	z-index: 10;
 }
+
+.filtrate_item .bigIconFont{
+	width:28px;
+	height:28px;
+	line-height: 28px;
+	font-size:16px;
+}
+
 .filtrate_item .time_component{
 	position:relative;
 	display: inline-block;
@@ -85,4 +102,15 @@
 }
 .btns-module .button{
 	margin-right:10px;
+}
+
+.head_btn>span{
+	display: inline-block;
+	width: 90px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.btn_form{
+	margin-top: 10px;
 }
