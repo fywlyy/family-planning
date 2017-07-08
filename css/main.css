@@ -10,6 +10,10 @@ html,body{
 	box-sizing: border-box;
 }
 
+.header>h1{
+	font-size: 35px;
+}
+
 .bar_head{
 	background: #cee8d8;
 	color: #33a49d;

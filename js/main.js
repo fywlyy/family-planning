@@ -33,6 +33,10 @@ $(function(){
           link: '#test',
           active: false
         },{
+          name: '生育登记服务',
+          link: '#infoInput',
+          active: false
+        },{
           name: '生育登记受理查询',
           link: '#test',
           active: false
