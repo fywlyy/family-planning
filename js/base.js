@@ -119,5 +119,28 @@ $(function(){
         		$(".endDate[name='"+dateGroup+"']").datetimepicker('setStartDate',startDate);
 	        }
 	    });		
-	})
+	});
+
+    $(".select_component .checked_text").on("click",function(e){
+        e.stopPropagation();
+        $(this).next(".select_list").toggle();
+    });
+    $(".select_component .select_list li").on("click",function(e){
+        e.stopPropagation();
+        var $parent = $(this).parent();
+        var $parents = $parent.parent();
+        var checkedVal = $(this).data('value');
+        var checkedText = $(this).text();
+        $parent.toggle();
+
+        $parents.find(".checked_text").text(checkedText);
+        if(checkedVal == -1){
+            $parents.find('input[type="hidden"]').val('');
+        }else{
+            $parents.find('input[type="hidden"]').val(checkedVal);
+        }
+    });
+    $(document).on("click",function(){
+        $(".select_component .select_list").hide();
+    })
 })

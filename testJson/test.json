@@ -1,0 +1,36 @@
+
+{
+	rows: [{
+				Id: 1,
+				Code: 1234,
+				Name: 'name',
+				Gender: 0,
+				Email: 'Email',
+				Phone: 'Phone',
+				IdCard: 'IdCard'
+			},{
+				Id: 1,
+				Code: 1234,
+				Name: 'name',
+				Gender: 1,
+				Email: 'Email',
+				Phone: 'Phone',
+				IdCard: 'IdCard'
+			},{
+				Id: 1,
+				Code: 1234,
+				Name: 'name',
+				Gender: 1,
+				Email: 'Email',
+				Phone: 'Phone',
+				IdCard: 'IdCard'
+			},{
+				Id: 1,
+				Code: 1234,
+				Name: 'name',
+				Gender: 0,
+				Email: 'Email',
+				Phone: 'Phone',
+				IdCard: 'IdCard'
+			}]
+}
