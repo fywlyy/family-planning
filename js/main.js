@@ -152,6 +152,7 @@ function renderTab(linkObj){
   var $myTabContent =$("#myTabContent");
 
   $myTab.find('li.active').removeClass('active');
+  $myTabContent.find('.tab-pane').removeClass('active');
   tabHtml += '<li class="tab-item active" data-link="#'+linkObj.link+'">'+
             '<a href="#'+linkObj.link+'" data-toggle="tab">'+
                 linkObj.name+
@@ -190,6 +191,7 @@ function renderTab(linkObj){
         .addClass('active');
     }
   })
+  $myTab.find('.icon_tab').off('click',function(){});
   $myTab.find('.icon_tab').on('click',function(){
     $(this).parent().remove();
     if($(this).parent().hasClass('active')){
