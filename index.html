@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_atuz25jvk5yd5cdi.css">
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_s0t7rmn472ufpqfr.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="./Plugin/jqGrid/ui.jqgrid.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/rest.css">
 	<link rel="stylesheet" type="text/css" href="./css/base.css">	
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
@@ -17,6 +18,15 @@
 				<div class="filtrate_item fl">
 					<span class="item_title">区域：</span>
 					<div class="select_component">
+						<input id="Area" type="hidden">
+						<span class="checked_text">请选择</span>
+						<ul class="select_list">
+							<li data-value="-1">请选择</li>
+							<li data-value="0">区域1</li>
+							<li data-value="1">区域2</li>
+							<li data-value="2">区域3</li>
+							<li data-value="3">区域4</li>
+						</ul>
 						<span class="iconfont icon-jiantou-copy-copy"></span>
 					</div>
 				</div>
@@ -71,9 +81,67 @@
 				<button class="button">导出Excel</button>
 			</div>													
 		</form>
+		<div class="jqGrid_wrapper">  
+			<div id="jqGridPager">
+				<div class="filtrates_module clearFix" style="display:inline-block;padding:0;vertical-align: middle;">
+					<div class="filtrate_item fl" style="margin:0 5px 0 0;">
+						<div class="select_component" style="width:70px;">
+							<span class="iconfont icon-jiantou-copy-copy"></span>
+						</div>
+					</div>
+				</div>	
+				<span class="iconfont icon-pagination-prev isFirst"></span>			
+				<span class="iconfont icon-sanjiaojiantou01 isFirst"></span>	
+				<span class="input-pageNo">第 <input type="text"> 共123页</span>	
+				<span class="iconfont icon-zhongchaosanjiaojiantou01"></span>			
+				<span class="iconfont icon-pagination-next"></span>
+				<button class="button" type="button">转到</button>					
+			</div>
+		    <table id="jqGridList"></table>  	  
+		</div>  
 	</div>
 	<script type="text/javascript" src="./Plugin/jquery.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="./Plugin/jqGrid/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="./js/base.js"></script>
+	<script>
+		$("#jqGridList").jqGrid({
+			datatype: "local",
+			height: 250,
+		   	colNames:['编号','女方姓名', '女方证件号', '女方户籍地','民族','婚姻情况',
+		   				'男方姓名','男方证件号','男方户籍地','发证时间','发证机关','经办人','证件号','区划编号'],
+		   	colModel:[
+		   		{name:'id',index:'id', width:61,align:"center", sorttype:"int"},
+		   		{name:'wName',index:'wName', width:91,align:"center",sorttype:"date"},
+		   		{name:'wID',index:'wID', width:151,align:"center"},
+		   		{name:'wAdd',index:'wAdd', width:81,align:"center"},
+		   		{name:'nation',index:'nation', width:81,align:"center"},		
+		   		{name:'marriage',index:'marriage', width:81,align:"center",sorttype:"float"},		
+		   		{name:'mName',index:'mName', width:151,align:"center",sortable:false},		
+		   		{name:'mID',index:'mID', width:151,align:"center",sortable:false},		
+		   		{name:'mAdd',index:'mAdd', width:151,align:"center",sortable:false},		
+		   		{name:'time',index:'time', width:151,align:"center",sortable:false, sorttype:"date"},		
+		   		{name:'office',index:'office', width:151,align:"center",sortable:false},		
+		   		{name:'operator',index:'operator', width:151,align:"center",sortable:false},		
+		   		{name:'ID',index:'ID', width:151,align:"center",sortable:false},		
+		   		{name:'number',index:'number', width:151,align:"center",sortable:false}		
+		   	],
+		   	multiselect: true
+		});
+		var mydata = [
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'},
+			{id: '1',wName: '女方姓名',wID: '12312312312223',wAdd: '女方户籍地',nation: '民族',marriage: '婚姻情况',mName: '男方姓名',mID: '234234234234234',mAdd: '男方户籍地',time: '2017-07-08',office: '发证机关',operator: '经办人',ID: '证件号',number: '区划编号'}
+			];
+		for(var i=0;i<=mydata.length;i++){
+			$("#jqGridList").jqGrid('addRowData',i+1,mydata[i]);
+		}		           
+	</script>
 </body>
 </html>

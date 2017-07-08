@@ -1,6 +1,6 @@
 Date.prototype.format = function(formatStr){
     var str = formatStr;
-    var Week = ['æ—¥', 'ä¸€', 'äºŒ', 'ä¸‰', 'å››', 'äº”', 'å…­'];
+    var Week = ['ÈÕ', 'Ò»', '¶ş', 'Èı', 'ËÄ', 'Îå', 'Áù'];
 
     str = str.replace(/yyyy|YYYY/, this.getFullYear());
     str = str.replace(/yy|YY/, (this.getYear() % 100) > 9 ? (this.getYear() % 100).toString() : '0' + (this.getYear() % 100));
@@ -24,13 +24,13 @@ Date.prototype.format = function(formatStr){
 }
 
 $.fn.datetimepicker.dates['zh'] = {  
-                days:       ["æ˜ŸæœŸæ—¥", "æ˜ŸæœŸä¸€", "æ˜ŸæœŸäºŒ", "æ˜ŸæœŸä¸‰", "æ˜ŸæœŸå››", "æ˜ŸæœŸäº”", "æ˜ŸæœŸå…­","æ˜ŸæœŸæ—¥"],  
-                daysShort:  ["æ—¥", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­","æ—¥"],  
-                daysMin:    ["æ—¥", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­","æ—¥"],  
-                months:     ["ä¸€æœˆ", "äºŒæœˆ", "ä¸‰æœˆ", "å››æœˆ", "äº”æœˆ", "å…­æœˆ", "ä¸ƒæœˆ", "å…«æœˆ", "ä¹æœˆ", "åæœˆ", "åä¸€æœˆ","åäºŒæœˆ"],  
-                monthsShort:  ["ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­", "ä¸ƒ", "å…«", "ä¹", "å", "åä¸€", "åäºŒ"],  
-                meridiem:    ["ä¸Šåˆ", "ä¸‹åˆ"],   
-                today:       "ä»Šå¤©"  
+                days:       ["ĞÇÆÚÈÕ", "ĞÇÆÚÒ»", "ĞÇÆÚ¶ş", "ĞÇÆÚÈı", "ĞÇÆÚËÄ", "ĞÇÆÚÎå", "ĞÇÆÚÁù","ĞÇÆÚÈÕ"],  
+                daysShort:  ["ÈÕ", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù","ÈÕ"],  
+                daysMin:    ["ÈÕ", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù","ÈÕ"],  
+                months:     ["Ò»ÔÂ", "¶şÔÂ", "ÈıÔÂ", "ËÄÔÂ", "ÎåÔÂ", "ÁùÔÂ", "ÆßÔÂ", "°ËÔÂ", "¾ÅÔÂ", "Ê®ÔÂ", "Ê®Ò»ÔÂ","Ê®¶şÔÂ"],  
+                monthsShort:  ["Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù", "Æß", "°Ë", "¾Å", "Ê®", "Ê®Ò»", "Ê®¶ş"],  
+                meridiem:    ["ÉÏÎç", "ÏÂÎç"],   
+                today:       "½ñÌì"  
         };
 
 
@@ -39,20 +39,20 @@ window.Util = {
      * Created with JetBrains WebStorm.
      * User: liyong.wang
      * Date: 16/12/5
-     * Time: ä¸‹åˆ4:56
-     * Desc: å„ç§æ—¥æœŸæ ¼å¼åŒ–å‡½æ•°
+     * Time: ÏÂÎç4:56
+     * Desc: ¸÷ÖÖÈÕÆÚ¸ñÊ½»¯º¯Êı
      */
     dateFormat:function(dateStr){
         return dateStr ? new Date(dateStr).format('yyyy-MM-dd hh:mm:ss') : "";
     },
     dateFormatWithChinese:function(dateStr){
-        return dateStr ? new Date(dateStr).format('yyyyå¹´MMæœˆddæ—¥ hh:mm:ss') : "";
+        return dateStr ? new Date(dateStr).format('yyyyÄêMMÔÂddÈÕ hh:mm:ss') : "";
     },
     dateFormatByMonth:function(dateStr){
         return dateStr ? new Date(dateStr).format('yyyy-MM-dd') : "";
     },
     dateFormatByMonthWithChinese:function(dateStr){
-        return dateStr ? new Date(dateStr).format('yyyyå¹´MMæœˆddæ—¥') : "";
+        return dateStr ? new Date(dateStr).format('yyyyÄêMMÔÂddÈÕ') : "";
     },
     dayFormat: function(dataStr, type){
         if(!dataStr){
@@ -119,5 +119,28 @@ $(function(){
         		$(".endDate[name='"+dateGroup+"']").datetimepicker('setStartDate',startDate);
 	        }
 	    });		
-	})
+	});
+
+    $(".select_component .checked_text").on("click",function(e){
+        e.stopPropagation();
+        $(this).next(".select_list").toggle();
+    });
+    $(".select_component .select_list li").on("click",function(e){
+        e.stopPropagation();
+        var $parent = $(this).parent();
+        var $parents = $parent.parent();
+        var checkedVal = $(this).data('value');
+        var checkedText = $(this).text();
+        $parent.toggle();
+
+        $parents.find(".checked_text").text(checkedText);
+        if(checkedVal == -1){
+            $parents.find('input[type="hidden"]').val('');
+        }else{
+            $parents.find('input[type="hidden"]').val(checkedVal);
+        }
+    });
+    $(document).on("click",function(){
+        $(".select_component .select_list").hide();
+    })
 })
