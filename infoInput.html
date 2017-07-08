@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_atuz25jvk5yd5cdi.css">
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_a28tw5p5fvibe29.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-datetimepicker.min.css">
@@ -37,24 +37,60 @@
 					<div class="filtrate_item fl">
 						<span class="item_alignLeft">申请区划：</span>
 						<div class="select_component moreHeight moreWidth">
+							<input id="applyZoning" type="hidden">
+							<span class="checked_text">请选择</span>
+							<ul class="select_list">
+								<li data-value="-1">请选择</li>
+								<li data-value="0">区划1</li>
+								<li data-value="1">区划2</li>
+								<li data-value="2">区划3</li>
+								<li data-value="3">区划4</li>
+							</ul>
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
 					<div class="filtrate_item fl">
 						<span class="item_alignLeft">申办方式：</span>
 						<div class="select_component moreHeight">
+							<input id="applyWay" type="hidden">
+							<span class="checked_text">请选择</span>
+							<ul class="select_list">
+								<li data-value="-1">请选择</li>
+								<li data-value="0">方式1</li>
+								<li data-value="1">方式2</li>
+								<li data-value="2">方式3</li>
+								<li data-value="3">方式4</li>
+							</ul>
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
 					<div class="filtrate_item fl">
 						<span class="item_alignLeft">申请区域：</span>
 						<div class="select_component moreHeight">
+							<input id="applyArea" type="hidden">
+							<span class="checked_text">请选择</span>
+							<ul class="select_list">
+								<li data-value="-1">请选择</li>
+								<li data-value="0">区域1</li>
+								<li data-value="1">区域2</li>
+								<li data-value="2">区域3</li>
+								<li data-value="3">区域4</li>
+							</ul>
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
 					<div class="filtrate_item fl">
 						<span class="item_alignLeft">办理方式：</span>
 						<div class="select_component moreHeight">
+							<input id="handleWay" type="hidden">
+							<span class="checked_text">请选择</span>
+							<ul class="select_list">
+								<li data-value="-1">请选择</li>
+								<li data-value="0">方式1</li>
+								<li data-value="1">方式2</li>
+								<li data-value="2">方式3</li>
+								<li data-value="3">方式4</li>
+							</ul>
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
@@ -470,35 +506,82 @@
 			</div>
 			<div class="form_content">
 				<div class="fjxx_height">
-					<div class="my_checkbox">
-			            <input type="checkbox" value="1" id="firstBirth" name="firstBirth" />
-			            <label for="firstBirth"></label>
+					<div class="fl">
+						<div class="my_checkbox">
+				            <input type="checkbox" value="1" id="famaleCard" name="famaleCard" />
+				            <label for="famaleCard"></label>
+				      	</div>
+			      		<label for="famaleCard" class="redFontColor">女方身份证（必传）</label>
 			      	</div>
-		      		<label for="firstBirth" class="redFontColor">女方身份证（必传）</label>
-		      		<input type="file" name="famaleFile" class="file fl">
-		      		<button class="button">上传</button>
-		      		<button class="button">扫描</button>
-		      		<button class="button">查看</button>
+			      	<div class="file_input">
+		      			<input type="file" name="famaleFile" class="file fl">
+		      			<span class="file_name">未选择任何文件</span>
+		      			<span class="file_tips">选择文件</span>
+		      		</div>
+		      		<button class="button fjxx_btn">
+		      			<span class="iconfont icon-upload"></span>
+		      			&nbsp;上传
+		      		</button>
+		      		<button class="button fjxx_btn">
+		      			<span class="iconfont icon-ccgl-rukushangjiasaomiao-4"></span>
+			      		&nbsp;扫描
+		      		</button>
+		      		<button class="button fjxx_btn">
+		      			<span class="iconfont icon-chakan-"></span>
+			      		&nbsp;查看
+		      		</button>
 		    	</div>
 			    <div class="fjxx_height">
-			      	<div class="my_checkbox">
-			            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
-			            <label for="secBirth"></label>
-			      	</div>
-			      	<label for="secBirth" class="redFontColor">男方身份证（必传）</label>
-			      	<button class="button">上传</button>
-		      		<button class="button">扫描</button>
-		      		<button class="button">查看</button>
+			    	<div class="fl">
+				      	<div class="my_checkbox">
+				            <input type="checkbox" value="1" id="maleCard" name="maleCard" />
+				            <label for="maleCard"></label>
+				      	</div>
+				      	<label for="maleCard" class="redFontColor">男方身份证（必传）</label>
+				    </div>
+			      	<div class="file_input">
+		      			<input type="file" name="famaleFile" class="file fl">
+		      			<span class="file_name">未选择任何文件</span>
+		      			<span class="file_tips">选择文件</span>
+		      		</div>
+			      	<button class="button fjxx_btn">
+			      		<span class="iconfont icon-upload"></span>
+			      		&nbsp;上传
+			      	</button>
+		      		<button class="button fjxx_btn">
+		      			<span class="iconfont icon-ccgl-rukushangjiasaomiao-4"></span>
+			      		&nbsp;扫描
+		      		</button>
+		      		<button class="button fjxx_btn">
+		      			<span class="iconfont icon-chakan-"></span>
+			      		&nbsp;查看
+		      		</button>
 			    </div>
 			    <div class="fjxx_height">
-			      	<div class="my_checkbox">
-			            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
-			            <label for="secBirth"></label>
-			      	</div>
-			      	<label for="secBirth" class="redFontColor">结婚证</label>
-			      	<button class="button">上传</button>
-		      		<button class="button">扫描</button>
-		      		<button class="button">查看</button>
+				    <div class="fl">
+				      	<div class="my_checkbox">
+				            <input type="checkbox" value="1" id="marriageCert" name="marriageCert" />
+				            <label for="marriageCert"></label>
+				      	</div>
+				      	<label for="marriageCert" class="redFontColor">结婚证</label>
+				    </div>
+			      	<div class="file_input">
+		      			<input type="file" name="famaleFile" class="file fl">
+		      			<span class="file_name">未选择任何文件</span>
+		      			<span class="file_tips">选择文件</span>
+		      		</div>
+			      	<button class="button fjxx_btn">
+			      		<span class="iconfont icon-upload"></span>
+			      		&nbsp;上传
+			      	</button>
+		      		<button class="button fjxx_btn">
+			      		<span class="iconfont icon-ccgl-rukushangjiasaomiao-4"></span>
+			      		&nbsp;扫描
+		      		</button>
+		      		<button class="button fjxx_btn">
+		      			<span class="iconfont icon-chakan-"></span>
+			      		&nbsp;查看
+		      		</button>
 			    </div>
 		    </div>
 		</form>

@@ -49,7 +49,7 @@
 	background-color:transparent;
 	border:1px solid #ccc;
 	border-top:none;
-	z-index: 8;
+	z-index: 101;
 }
 .filtrate_item .select_component .select_list li{
 	height:20px;
@@ -67,18 +67,21 @@
 .filtrate_item .moreHeight{
 	height:30px !important;
 }
-.filtrate_item .moreHeight .select_component .select_list{
+.filtrate_item .moreHeight .select_list{
 	top:30px;
 }
-.filtrate_item .moreHeight .select_component .select_list li{
+.filtrate_item .moreHeight .select_list li{
 	height:30px;
 	line-height: 30px;
 }
 .filtrate_item .moreWidth{
 	width: 300px !important;
 }
-.filtrate_item .moreWidth .select_component .select_list{
+.filtrate_item .moreWidth .select_list{
 	width:300px;
+}
+.filtrate_item .moreHeight .checked_text{
+	line-height: 30px;
 }
 
 .filtrate_item .iconfont{

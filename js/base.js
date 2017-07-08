@@ -143,4 +143,12 @@ $(function(){
     $(document).on("click",function(){
         $(".select_component .select_list").hide();
     })
+
+    $(".file_input input[type='file']").on("change",function(e){
+
+        var inputArr = this.value.split('\\');
+        var inputValue = inputArr[inputArr.length-1];
+        $(this).next('.file_name').html(inputValue);
+
+    });
 })
