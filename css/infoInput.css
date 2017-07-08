@@ -1,12 +1,5 @@
 .infoInput{
 	padding: 10px;
-<<<<<<< HEAD
-}
-
-.item_alignLeft{
-	width: auto;
-=======
->>>>>>> 3fbaaeeb49dea780e9861c148cd85c0c010176a7
 }
 
 .filtrate_item{
@@ -38,5 +31,92 @@
 	display: inline-block;
 	padding: 0;
 }
+
+.myModal_header{
+	background: #31a59d;
+	color: #fff;
+	line-height: 30px;
+	padding: 0 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.mymodal_title{
+	line-height: 30px;
+	font-size: 16px;
+}
+
+.myModal_close{
+	line-height: 30px;
+	color: #fff;
+	font-size: 24px;
+	text-shadow: 0 0 0 #fff;
+    opacity: 1; 
+}
+
+.modal-content{
+	border: 1px solid #31a59d;
+}
+
+.modal-body{
+	padding: 10px;
+}
+
+.modal_formContent{
+	padding: 15px 5px;
+}
+
+.famale_checkbox{
+	margin-left: 20px;
+}
+
+.textarea_modal{
+	display: inline-block;
+	width: 87%;
+	vertical-align: top;
+}
+
+.textarea_modal textarea{
+	width: 100%;
+	height: 120px;
+	border: 1px solid #31a59d;
+	resize: none;
+	text-indent: 5px;
+}
+
+.modal_span{
+	padding-left: 5px;
+}
+
+.inputTime_modal{
+	margin-left: 150px;
+}
+
+.modal-footer{
+	border-top: none;
+	text-align: center;
+}
+
+.modal-dialog{
+	width: 750px;
+}
+
+.fjxx_height{
+	height: 40px;
+}
+
+.fjxx_height label{
+	display: inline-block;
+	width: 160px;
+}
+
+.submit_button{
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
 
 

@@ -31,11 +31,11 @@
 }
 
 .filtrate_item .moreHeight{
-	height:30px;
+	height:30px !important;
 }
 
 .filtrate_item .moreWidth{
-	width: 300px;
+	width: 300px !important;
 }
 
 .filtrate_item .iconfont{
@@ -85,12 +85,7 @@
 	width:140px;
 	height:20px;
 	border:1px solid #ccc;
-<<<<<<< HEAD
 	vertical-align: middle;	
-=======
-	vertical-align: middle;
-	cursor: pointer;	
->>>>>>> 3fbaaeeb49dea780e9861c148cd85c0c010176a7
 }
 .filtrate_item .input_component input{
 	width:100%;
@@ -146,8 +141,5 @@
 .bottom_form{
 	border: 1px solid #238f7b;
 	padding: 20px;
-<<<<<<< HEAD
-	margin-top: 10px;
-=======
->>>>>>> 3fbaaeeb49dea780e9861c148cd85c0c010176a7
+	margin-top: 5px;
 }

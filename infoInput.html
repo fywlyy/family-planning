@@ -66,10 +66,9 @@
 						<div class=" btns-module btn_infoInput">
 							<button class="button">扫描身份证</button>
 							<button class="button">提取PIP信息</button>
-							<button class="button">查检</button>
+							<button type="button" class="button" data-toggle="modal" data-target="#infoInputModal">查检</button>
 						</div>
 					</div>
-<<<<<<< HEAD
 					<div class="bottom_form"> 
 						<ul>
 							<li class="clearFix">
@@ -309,24 +308,6 @@
 							</li>
 						</ul>
 					</div>
-=======
-					<form class="bottom_form"> 
-						<div class="clearFix">
-							<div class="filtrate_item fl">
-								<span class="item_title">姓名：</span>
-								<div class="input_component">
-									<input type="text">
-								</div>
-							</div>
-							<div class="filtrate_item fl">
-								<span class="item_title">证件类型：</span>
-								<div class="select_component">
-									<span class="iconfont icon-jiantou-copy-copy"></span>
-								</div>
-							</div>
-						</div>
-					</form>
->>>>>>> 3fbaaeeb49dea780e9861c148cd85c0c010176a7
 				</div>
 
 				<div class="btn_form">
@@ -488,12 +469,129 @@
 				<label>附件信息</label>
 			</div>
 			<div class="form_content">
-				
-			</div>
+				<div class="fjxx_height">
+					<div class="my_checkbox">
+			            <input type="checkbox" value="1" id="firstBirth" name="firstBirth" />
+			            <label for="firstBirth"></label>
+			      	</div>
+		      		<label for="firstBirth" class="redFontColor">女方身份证（必传）</label>
+		      		<button class="button">上传</button>
+		      		<button class="button">扫描</button>
+		      		<button class="button">查看</button>
+		    	</div>
+			    <div class="fjxx_height">
+			      	<div class="my_checkbox">
+			            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
+			            <label for="secBirth"></label>
+			      	</div>
+			      	<label for="secBirth" class="redFontColor">男方身份证（必传）</label>
+			      	<button class="button">上传</button>
+		      		<button class="button">扫描</button>
+		      		<button class="button">查看</button>
+			    </div>
+			    <div class="fjxx_height">
+			      	<div class="my_checkbox">
+			            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
+			            <label for="secBirth"></label>
+			      	</div>
+			      	<label for="secBirth" class="redFontColor">结婚证</label>
+			      	<button class="button">上传</button>
+		      		<button class="button">扫描</button>
+		      		<button class="button">查看</button>
+			    </div>
+		    </div>
 		</form>
+		<div class="textAlignCenter">
+			<button class="button submit_button">保存</button>
+		</div>
+		
 	</div>
+
+	<!-- 模态框 -->
+	<div class="modal fade" id="infoInputModal" tabindex="-1" role="dialog">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="myModal_header">
+	                <button type="button" class="close myModal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="mymodal_title" id="myModalLabel">协查函</h4>
+	            </div>
+	            <div class="modal-body">
+	            	<form class="my_form">
+						<div class="form_head">
+							<label>选项</label>
+						</div>
+						<div class="modal_formContent">
+							<div class="my_checkbox">
+					            <input type="checkbox" value="1" id="male" name="male" />
+					            <label for="male"></label>
+					      	</div>
+					      	<label for="male">男</label>
+					      	<div class="my_checkbox famale_checkbox">
+					            <input type="checkbox" value="1" id="famale" name="famale" />
+					            <label for="famale"></label>
+					      	</div>
+					      	<label for="famale">女</label>
+					    </div>
+					</form>
+					<form class="my_form">
+						<div class="form_head">
+							<label>女方协查内容</label>
+						</div>
+						<div class="modal_formContent">
+							<div class="filtrate_item">
+								<span class="item_alignLeft modal_span">接收区域：</span>
+								<div class="select_component moreHeight moreWidth">
+									<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
+								</div>
+							</div>
+							<div class="filtrate_item">
+								<span class="item_alignLeft modal_span">协查内容：</span>
+								<div class="textarea_modal">
+									<textarea></textarea>
+								</div>
+							</div>
+					    </div>
+					    <div class="clearFix"></div>
+					</form>
+					<form class="my_form">
+						<div class="form_head">
+							<label>操作信息</label>
+						</div>
+						<div class="modal_formContent">
+							<div class="filtrate_item fl">
+								<span class="item_alignLeft modal_span">录入人员：</span>
+								<div class="moreHeight input_component">
+									<input type="text">
+								</div>
+							</div>
+							<div class="filtrate_item fl inputTime_modal">
+								<span class="item_alignLeft modal_span">录入时间：</span>
+								<div class="moreHeight input_component">
+									<input type="text">
+								</div>
+							</div>
+					    </div>
+					    <div class="clearFix"></div>
+					</form>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="button" data-dismiss="modal">发送协查</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+
 	<script type="text/javascript" src="./Plugin/jquery.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript" src="./js/base.js"></script>
+
+	<script>
+		
+		//$("#infoInputModal").modal('show');
+
+	</script>
+
 </body>
 </html>
