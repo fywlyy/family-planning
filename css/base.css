@@ -67,9 +67,18 @@
 .filtrate_item .moreHeight{
 	height:30px !important;
 }
-
+.filtrate_item .moreHeight .select_component .select_list{
+	top:30px;
+}
+.filtrate_item .moreHeight .select_component .select_list li{
+	height:30px;
+	line-height: 30px;
+}
 .filtrate_item .moreWidth{
 	width: 300px !important;
+}
+.filtrate_item .moreWidth .select_component .select_list{
+	width:300px;
 }
 
 .filtrate_item .iconfont{
