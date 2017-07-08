@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_oxkxyylv1ifwdn29.css">
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_atuz25jvk5yd5cdi.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-datetimepicker.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/rest.css">
 	<link rel="stylesheet" type="text/css" href="./css/base.css">
 	<link rel="stylesheet" type="text/css" href="./css/infoInput.css">
@@ -17,11 +18,13 @@
 			</div>
 			<div class="form_content smallFontSize textAlignCenter">
 				<div class="my_checkbox">
-		            <input type="checkbox" value="1" id="my_checkbox" name="" />
+		            <input type="checkbox" value="1" id="my_checkbox" name="my_checkbox" />
 		            <label for="my_checkbox"></label>
 		      	</div>
-				以下情况属实，如有虚假或隐瞒，愿承担由此产生的一切法律责任。
-				<label class="redFontColor">(请先勾选申明，才能办理登记)</label>
+				<label for="my_checkbox">
+					以下情况属实，如有虚假或隐瞒，愿承担由此产生的一切法律责任。
+					<label class="redFontColor">(请先勾选申明，才能办理登记)</label>
+				</label>
 			</div>
 		</form>
 
@@ -32,25 +35,25 @@
 			<div class="form_content">
 				<div class="clearFix">
 					<div class="filtrate_item fl">
-						<span class="item_title">申请区划：</span>
+						<span class="item_alignLeft">申请区划：</span>
 						<div class="select_component moreHeight moreWidth">
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
 					<div class="filtrate_item fl">
-						<span class="item_title">申办方式：</span>
+						<span class="item_alignLeft">申办方式：</span>
 						<div class="select_component moreHeight">
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
 					<div class="filtrate_item fl">
-						<span class="item_title">申请区域：</span>
+						<span class="item_alignLeft">申请区域：</span>
 						<div class="select_component moreHeight">
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
 					</div>
 					<div class="filtrate_item fl">
-						<span class="item_title">办理方式：</span>
+						<span class="item_alignLeft">办理方式：</span>
 						<div class="select_component moreHeight">
 							<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
 						</div>
@@ -63,29 +66,532 @@
 						<div class=" btns-module btn_infoInput">
 							<button class="button">扫描身份证</button>
 							<button class="button">提取PIP信息</button>
-							<button class="button">查检</button>
+							<button type="button" class="button" data-toggle="modal" data-target="#infoInputModal">查检</button>
 						</div>
 					</div>
-					<form class="bottom_form"> 
-						<div class="clearFix">
-							<div class="filtrate_item fl">
-								<span class="item_title">姓名：</span>
-								<div class="input_component">
-									<input type="text">
+					<div class="bottom_form"> 
+						<ul>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">姓名：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
 								</div>
-							</div>
-							<div class="filtrate_item fl">
-								<span class="item_title">证件类型：</span>
-								<div class="select_component">
-									<span class="iconfont icon-jiantou-copy-copy"></span>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">证件类型：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
 								</div>
-							</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">证件号：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">出生日期：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">民族：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">户口性质：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">婚姻状况：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">户籍区划地址：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">联系电话：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">现居住区划地址：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">是否独生子女：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">工作或家庭地址：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="btn_form">
+					<div class="head_btn">
+						<span class="blueFontColor">男方信息：</span>
+						<div class=" btns-module btn_infoInput">
+							<button class="button">扫描身份证</button>
+							<button class="button">提取PIP信息</button>
 						</div>
-					</form>
+					</div>
+					<div class="bottom_form"> 
+						<ul>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">姓名：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">证件类型：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">证件号：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">出生日期：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">民族：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">户口性质：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">婚姻状况：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">户籍区划地址：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">联系电话：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">现居住区划地址：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">是否独生子女：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">工作或家庭地址：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="btn_form">
+					<div class="head_btn">
+						<span class="blueFontColor">委托人信息：</span>
+						<div class=" btns-module btn_infoInput">
+							<button class="button">扫描身份证</button>
+						</div>
+					</div>
+					<div class="bottom_form"> 
+						<ul>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">姓名：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">证件类型：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">证件号：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">性别：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">联系电话：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">户籍区划地址：</span>
+									<div class="select_component long_select">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="btn_form">
+					<div class="head_btn">
+						<span class="blueFontColor">婚育情形：</span>
+					</div>
+					<div class="bottom_form"> 
+						<div>
+							<div class="my_checkbox">
+					            <input type="checkbox" value="1" id="firstBirth" name="firstBirth" />
+					            <label for="firstBirth"></label>
+					      	</div>
+					      	<label for="firstBirth">夫妻(含再婚夫妻)生育第一个子女的</label>
+					    </div>
+					    <div>
+					      	<div class="my_checkbox">
+					            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
+					            <label for="secBirth"></label>
+					      	</div>
+					      	<label for="secBirth">夫妻(含再婚夫妻)生育第二个子女的</label>
+					    </div>
+					</div>
+				</div>
+
+				<div class="btn_form">
+					<div class="head_btn">
+						<span class="blueFontColor">孕育情况：</span>
+					</div>
+					<div class="bottom_form"> 
+						<ul>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">拟怀孕时间：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">怀孕时间：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">预产期：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">结婚证号：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">结婚日期：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="btn_form">
+					<div class="head_btn">
+						<span class="blueFontColor">证件信息：</span>
+					</div>
+					<div class="bottom_form"> 
+						<ul>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">录入人员：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">录入时间：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">证件用途：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">证件编号：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">发证机关：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">发证时间：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">机关审核时间：</span>
+									<div class="time_component">
+										<input class="date_picker" name="" type="text">
+										<span class="iconfont icon-riqi-copy"></span>
+									</div>
+								</div>
+								<div class="filtrate_item fl long_width">
+									<span class="item_title">机关经办人：</span>
+									<div class="input_component">
+										<input type="text">
+									</div>
+								</div>
+								<div class="filtrate_item fl">
+									<span class="item_title">机关审核意见：</span>
+									<div class="select_component">
+										<span class="iconfont icon-jiantou-copy-copy"></span>
+									</div>
+								</div>
+							</li>
+							<li class="clearFix">
+								<div class="filtrate_item fl">
+									<span class="item_title">备注：</span>
+									<div class="textarea_component">
+										<textarea></textarea>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</div>
 
 			</div>
 		</form>
+
+		<form class="my_form">
+			<div class="form_head">
+				<label>附件信息</label>
+			</div>
+			<div class="form_content">
+				<div class="fjxx_height">
+					<div class="my_checkbox">
+			            <input type="checkbox" value="1" id="firstBirth" name="firstBirth" />
+			            <label for="firstBirth"></label>
+			      	</div>
+		      		<label for="firstBirth" class="redFontColor">女方身份证（必传）</label>
+		      		<button class="button">上传</button>
+		      		<button class="button">扫描</button>
+		      		<button class="button">查看</button>
+		    	</div>
+			    <div class="fjxx_height">
+			      	<div class="my_checkbox">
+			            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
+			            <label for="secBirth"></label>
+			      	</div>
+			      	<label for="secBirth" class="redFontColor">男方身份证（必传）</label>
+			      	<button class="button">上传</button>
+		      		<button class="button">扫描</button>
+		      		<button class="button">查看</button>
+			    </div>
+			    <div class="fjxx_height">
+			      	<div class="my_checkbox">
+			            <input type="checkbox" value="1" id="secBirth" name="firstBirth" />
+			            <label for="secBirth"></label>
+			      	</div>
+			      	<label for="secBirth" class="redFontColor">结婚证</label>
+			      	<button class="button">上传</button>
+		      		<button class="button">扫描</button>
+		      		<button class="button">查看</button>
+			    </div>
+		    </div>
+		</form>
+		<div class="textAlignCenter">
+			<button class="button submit_button">保存</button>
+		</div>
+		
 	</div>
+
+	<!-- 模态框 -->
+	<div class="modal fade" id="infoInputModal" tabindex="-1" role="dialog">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="myModal_header">
+	                <button type="button" class="close myModal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="mymodal_title" id="myModalLabel">协查函</h4>
+	            </div>
+	            <div class="modal-body">
+	            	<form class="my_form">
+						<div class="form_head">
+							<label>选项</label>
+						</div>
+						<div class="modal_formContent">
+							<div class="my_checkbox">
+					            <input type="checkbox" value="1" id="male" name="male" />
+					            <label for="male"></label>
+					      	</div>
+					      	<label for="male">男</label>
+					      	<div class="my_checkbox famale_checkbox">
+					            <input type="checkbox" value="1" id="famale" name="famale" />
+					            <label for="famale"></label>
+					      	</div>
+					      	<label for="famale">女</label>
+					    </div>
+					</form>
+					<form class="my_form">
+						<div class="form_head">
+							<label>女方协查内容</label>
+						</div>
+						<div class="modal_formContent">
+							<div class="filtrate_item">
+								<span class="item_alignLeft modal_span">接收区域：</span>
+								<div class="select_component moreHeight moreWidth">
+									<span class="iconfont bigIconFont icon-jiantou-copy-copy"></span>
+								</div>
+							</div>
+							<div class="filtrate_item">
+								<span class="item_alignLeft modal_span">协查内容：</span>
+								<div class="textarea_modal">
+									<textarea></textarea>
+								</div>
+							</div>
+					    </div>
+					    <div class="clearFix"></div>
+					</form>
+					<form class="my_form">
+						<div class="form_head">
+							<label>操作信息</label>
+						</div>
+						<div class="modal_formContent">
+							<div class="filtrate_item fl">
+								<span class="item_alignLeft modal_span">录入人员：</span>
+								<div class="moreHeight input_component">
+									<input type="text">
+								</div>
+							</div>
+							<div class="filtrate_item fl inputTime_modal">
+								<span class="item_alignLeft modal_span">录入时间：</span>
+								<div class="moreHeight input_component">
+									<input type="text">
+								</div>
+							</div>
+					    </div>
+					    <div class="clearFix"></div>
+					</form>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="button" data-dismiss="modal">发送协查</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+
+	<script type="text/javascript" src="./Plugin/jquery.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="./js/base.js"></script>
+
+	<script>
+		
+		//$("#infoInputModal").modal('show');
+
+	</script>
+
 </body>
 </html>
