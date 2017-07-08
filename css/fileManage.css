@@ -1,0 +1,27 @@
+.fileManage{
+	padding: 10px;
+}
+
+.bottom_form .filtrate_item {
+    margin: 0 100px 12px 0;
+}
+
+.form_content{
+	padding: 20px 0;
+}
+
+.nav-tabs>li>a {
+    margin-right: 10px;
+}
+
+.tab-content{
+	padding: 10px 10px 0 ;
+}
+
+.btn_fileManage{
+	margin-top: 20px;
+}
+
+.btn_fileManage button + button{
+	margin-left: 25px;
+}

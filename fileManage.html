@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_atuz25jvk5yd5cdi.css">
+	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="./Plugin/bootstrap/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/rest.css">
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<link rel="stylesheet" type="text/css" href="./css/fileManage.css">
+</head>
+<body>
+	<div class="fileManage">
+		<div class="inputFile">
+			<div class="bottom_form"> 
+				<ul>
+					<li class="clearFix">
+						<div class="filtrate_item fl">
+							<span class="item_title">卷宗号：</span>
+							<div class="input_component">
+								<input type="text">
+							</div>
+						</div>
+						<div class="filtrate_item fl long_width">
+							<span class="item_title">录入人员：</span>
+							<div class="input_component">
+								<input type="text">
+							</div>
+						</div>
+						<div class="filtrate_item fl">
+							<span class="item_title">录入日期：</span>
+							<div class="time_component">
+								<input class="date_picker" name="" type="text">
+								<span class="iconfont icon-riqi-copy"></span>
+							</div>
+						</div>
+					</li>
+					<li class="clearFix">
+						<div class="filtrate_item fl long_width">
+							<span class="item_title">确认方式：</span>
+							<div class="select_component">
+								<span class="iconfont icon-jiantou-copy-copy"></span>
+							</div>
+						</div>
+					</li>
+					<li class="clearFix">
+						<div class="filtrate_item fl">
+							<span class="item_title">备注：</span>
+							<div class="textarea_component">
+								<textarea></textarea>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 审批信息 -->
+		<form class="my_form">
+			<div class="form_head">
+				<label>审批信息</label>
+			</div>
+			<div class="form_content">
+				<ul id="fileManage_tab" class="nav nav-tabs">
+				    <li class="tab-item">
+				        <a href="#first_trial" data-toggle="tab">
+				            初审
+				        </a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#review" data-toggle="tab">
+				            复审
+				        </a>
+				    </li>
+				    <li class="tab-item active">
+				        <a href="#file" data-toggle="tab">
+				            归档
+				        </a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#print" data-toggle="tab">
+				            打印证件
+				        </a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#enclosure" data-toggle="tab">
+				            附件
+				        </a>
+				    </li>
+				</ul>
+				<div id="tabContent_fileManage" class="tab-content">
+					<div class="tab-pane fade" id="first_trial">
+				        <div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">归档信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">申请人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">审批单位：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">归档人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+									</li>
+									<li class="clearFix">
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">归档日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">录入信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">卷宗号：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">录入人员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">录入日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="textAlignCenter btn_fileManage">
+							<button class="button">归档</button>
+							<button class="button">打印</button>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="review">
+				        <div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">归档信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">申请人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">审批单位：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">归档人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+									</li>
+									<li class="clearFix">
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">归档日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">录入信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">卷宗号：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">录入人员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">录入日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="textAlignCenter btn_fileManage">
+							<button class="button">归档</button>
+							<button class="button">打印</button>
+						</div>
+				    </div>
+				    <div class="tab-pane fade in active" id="file">
+				        <div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">归档信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">申请人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">审批单位：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">归档人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+									</li>
+									<li class="clearFix">
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">归档日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">录入信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">卷宗号：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">录入人员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">录入日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="textAlignCenter btn_fileManage">
+							<button class="button">归档</button>
+							<button class="button">打印</button>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="print">
+				        <div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">归档信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">申请人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">审批单位：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">归档人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+									</li>
+									<li class="clearFix">
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">归档日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">录入信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">卷宗号：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">录入人员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">录入日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="textAlignCenter btn_fileManage">
+							<button class="button">归档</button>
+							<button class="button">打印</button>
+						</div>
+				    </div>
+				    <div class="tab-pane fade" id="enclosure">
+				        <div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">归档信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">申请人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">审批单位：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">归档人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+									</li>
+									<li class="clearFix">
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">归档日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn_form">
+							<div class="head_btn">
+								<span class="blueFontColor">录入信息：</span>
+							</div>
+							<div class="bottom_form"> 
+								<ul>
+									<li class="clearFix">
+										<div class="filtrate_item fl">
+											<span class="item_title">卷宗号：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl long_width">
+											<span class="item_title">录入人员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl">
+											<span class="item_title">录入日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					    <div class="textAlignCenter btn_fileManage">
+							<button class="button">归档</button>
+							<button class="button">打印</button>
+						</div>
+				    </div>
+				</div>
+		    </div>
+		</form>
+	</div>
+	<script type="text/javascript" src="./Plugin/jquery.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./Plugin/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="./js/base.js"></script>
+</body>
+</html>
