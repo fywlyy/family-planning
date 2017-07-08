@@ -1,6 +1,6 @@
 Date.prototype.format = function(formatStr){
     var str = formatStr;
-    var Week = ['ÈÕ', 'Ò»', '¶ş', 'Èı', 'ËÄ', 'Îå', 'Áù'];
+    var Week = ['æ—¥', 'ä¸€', 'äºŒ', 'ä¸‰', 'å››', 'äº”', 'å…­'];
 
     str = str.replace(/yyyy|YYYY/, this.getFullYear());
     str = str.replace(/yy|YY/, (this.getYear() % 100) > 9 ? (this.getYear() % 100).toString() : '0' + (this.getYear() % 100));
@@ -24,35 +24,35 @@ Date.prototype.format = function(formatStr){
 }
 
 $.fn.datetimepicker.dates['zh'] = {  
-                days:       ["ĞÇÆÚÈÕ", "ĞÇÆÚÒ»", "ĞÇÆÚ¶ş", "ĞÇÆÚÈı", "ĞÇÆÚËÄ", "ĞÇÆÚÎå", "ĞÇÆÚÁù","ĞÇÆÚÈÕ"],  
-                daysShort:  ["ÈÕ", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù","ÈÕ"],  
-                daysMin:    ["ÈÕ", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù","ÈÕ"],  
-                months:     ["Ò»ÔÂ", "¶şÔÂ", "ÈıÔÂ", "ËÄÔÂ", "ÎåÔÂ", "ÁùÔÂ", "ÆßÔÂ", "°ËÔÂ", "¾ÅÔÂ", "Ê®ÔÂ", "Ê®Ò»ÔÂ","Ê®¶şÔÂ"],  
-                monthsShort:  ["Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù", "Æß", "°Ë", "¾Å", "Ê®", "Ê®Ò»", "Ê®¶ş"],  
-                meridiem:    ["ÉÏÎç", "ÏÂÎç"],   
-                today:       "½ñÌì"  
+                days:       ["æ˜ŸæœŸæ—¥", "æ˜ŸæœŸä¸€", "æ˜ŸæœŸäºŒ", "æ˜ŸæœŸä¸‰", "æ˜ŸæœŸå››", "æ˜ŸæœŸäº”", "æ˜ŸæœŸå…­","æ˜ŸæœŸæ—¥"],  
+                daysShort:  ["æ—¥", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­","æ—¥"],  
+                daysMin:    ["æ—¥", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­","æ—¥"],  
+                months:     ["ä¸€æœˆ", "äºŒæœˆ", "ä¸‰æœˆ", "å››æœˆ", "äº”æœˆ", "å…­æœˆ", "ä¸ƒæœˆ", "å…«æœˆ", "ä¹æœˆ", "åæœˆ", "åä¸€æœˆ","åäºŒæœˆ"],  
+                monthsShort:  ["ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­", "ä¸ƒ", "å…«", "ä¹", "å", "åä¸€", "åäºŒ"],  
+                meridiem:    ["ä¸Šåˆ", "ä¸‹åˆ"],   
+                today:       "ä»Šå¤©"  
         };
 
 
 window.Util = {
-	    /**
+        /**
      * Created with JetBrains WebStorm.
      * User: liyong.wang
      * Date: 16/12/5
-     * Time: ÏÂÎç4:56
-     * Desc: ¸÷ÖÖÈÕÆÚ¸ñÊ½»¯º¯Êı
+     * Time: ä¸‹åˆ4:56
+     * Desc: å„ç§æ—¥æœŸæ ¼å¼åŒ–å‡½æ•°
      */
     dateFormat:function(dateStr){
         return dateStr ? new Date(dateStr).format('yyyy-MM-dd hh:mm:ss') : "";
     },
     dateFormatWithChinese:function(dateStr){
-        return dateStr ? new Date(dateStr).format('yyyyÄêMMÔÂddÈÕ hh:mm:ss') : "";
+        return dateStr ? new Date(dateStr).format('yyyyå¹´MMæœˆddæ—¥ hh:mm:ss') : "";
     },
     dateFormatByMonth:function(dateStr){
         return dateStr ? new Date(dateStr).format('yyyy-MM-dd') : "";
     },
     dateFormatByMonthWithChinese:function(dateStr){
-        return dateStr ? new Date(dateStr).format('yyyyÄêMMÔÂddÈÕ') : "";
+        return dateStr ? new Date(dateStr).format('yyyyå¹´MMæœˆddæ—¥') : "";
     },
     dayFormat: function(dataStr, type){
         if(!dataStr){
@@ -96,30 +96,30 @@ window.Util = {
 
 
 $(function(){
-	var newDate = new Date();
+    var newDate = new Date();
 
-	$(".date_picker").each(function(i){
-		var $this = $(this);
-		var setOption = {
-			language:  'zh',
-			format: 'yyyy-mm-dd',		
-			minView: "month",
-			todayBtn: true,			
-		}
-		if($this.hasClass('startDate') || $this.hasClass('endDate')){
-			setOption.endDate = new Date();
-		}
+    $(".date_picker").each(function(i){
+        var $this = $(this);
+        var setOption = {
+            language:  'zh',
+            format: 'yyyy-mm-dd',       
+            minView: "month",
+            todayBtn: true,         
+        }
+        if($this.hasClass('startDate') || $this.hasClass('endDate')){
+            setOption.endDate = new Date();
+        }
 
-		$this.datetimepicker(setOption).on('changeDate', function (ev) {  
-			var startDate = Util.dateFormatByMonth(ev.date);
-			var option = Util.clone(setOption);
-			var dateGroup = $(this).attr('name');
-	        $this.datetimepicker('hide');  
-	        if($this.hasClass('startDate')){
-        		$(".endDate[name='"+dateGroup+"']").datetimepicker('setStartDate',startDate);
-	        }
-	    });		
-	});
+        $this.datetimepicker(setOption).on('changeDate', function (ev) {  
+            var startDate = Util.dateFormatByMonth(ev.date);
+            var option = Util.clone(setOption);
+            var dateGroup = $(this).attr('name');
+            $this.datetimepicker('hide');  
+            if($this.hasClass('startDate')){
+                $(".endDate[name='"+dateGroup+"']").datetimepicker('setStartDate',startDate);
+            }
+        });     
+    });
 
     $(".select_component .checked_text").on("click",function(e){
         e.stopPropagation();
