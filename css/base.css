@@ -29,6 +29,27 @@
 	vertical-align: middle;
 	cursor:pointer;
 }
+.filtrate_item .select_component .ztree{
+	display: none;
+	position:absolute;
+	top:19px;
+	left:-1px;
+	width:140px;
+	height:180px;
+	background-color:transparent;
+	border:1px solid #ccc;
+	border-top:none;
+	background-color:#fff;
+	overflow: auto;
+	z-index: 101;
+}
+.filtrate_item .select_component .select_text{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	text-indent: 10px;
+	line-height: 18px;
+}
 .filtrate_item .select_component > .checked_text{
 	position:relative;
 	display: block;
@@ -68,7 +89,7 @@
 	height:30px !important;
 }
 .filtrate_item .moreHeight .select_list{
-	top:30px;
+	top:29px;
 }
 .filtrate_item .moreHeight .select_list li{
 	height:30px;
@@ -82,6 +103,17 @@
 }
 .filtrate_item .moreHeight .checked_text{
 	line-height: 30px;
+}
+
+.filtrate_item .moreHeight .ztree{
+	top:29px;
+}
+.filtrate_item .moreHeight .select_text{
+	line-height: 28px;
+}
+.filtrate_item .moreWidth .ztree{
+	width:300px;
+	height:350px;
 }
 
 .filtrate_item .iconfont{

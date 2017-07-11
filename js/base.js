@@ -140,7 +140,13 @@ $(function(){
             $parents.find('input[type="hidden"]').val(checkedVal);
         }
     });
+    $(".select_ztree").on("click",function(e){
+        e.stopPropagation();
+        $(this).find('.ztree').show();
+    })
+
     $(document).on("click",function(){
+        $(".select_ztree .ztree").hide();
         $(".select_component .select_list").hide();
     })
 

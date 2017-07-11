@@ -120,7 +120,6 @@ $(function(){
 
   // 点击导航的头部，显示模态菜单
   $("#barHead").on("click",function(e){
-    debugger;
     e.stopPropagation();
     if($("#bomboBox").hasClass('hidden')){
       $("#bomboBox").removeClass('hidden');
@@ -128,6 +127,10 @@ $(function(){
     }
   })
 
+  $("#modal").on('click',function(){
+    $(this).addClass('hidden');
+    $("#bomboBox").addClass('hidden');
+  });
 
 
 })
