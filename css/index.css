@@ -4,3 +4,35 @@
 .filtrates_module .filtrate_item{
 	margin:0 100px 12px 0;
 }
+
+.filtrate_item{
+	margin: 0 20px 12px 0;
+}
+
+.rightInput_modal{
+	margin-left: 150px;
+}
+
+.modal_longInput{
+	width: 513px !important;
+}
+
+.basic_info{
+	padding: 0 10px;
+}
+
+#fileManage_tab{
+	margin: 10px 0;
+}
+
+.basicInfo_span{
+	width: 220px;
+}
+
+.basic_left_info ul li{
+	line-height: 23px;
+}
+
+.basic_right_img{
+	margin-left: 70px;
+}

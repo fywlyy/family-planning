@@ -71,7 +71,7 @@
 			</div>		
 			<div class="btns-module">
 				<button class="button">查询</button>
-				<button class="button">回函</button>
+				<button class="button" type="button" data-toggle="modal" data-target="#theTrialModal">回函</button>
 				<button class="button">导出Excel</button>
 			</div>													
 		</form>
@@ -94,6 +94,656 @@
 		    <table id="jqGridList"></table>  	  
 		</div>  
 	</div>
+
+	<!-- 模态框 --> 
+	<div class="modal fade" id="theTrialModal" tabindex="-1" role="dialog">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="myModal_header">
+	                <button type="button" class="close myModal_close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="mymodal_title" id="myModalLabel">初审详细界面</h4>
+	            </div>
+	            <ul id="fileManage_tab" class="nav nav-tabs">
+				    <li class="tab-item">
+				        <a href="#self_info" data-toggle="tab">
+				            本人信息
+				        </a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#spouse_info" data-toggle="tab">
+				            配偶信息
+				        </a>
+				    </li>
+				    <li class="tab-item active">
+				        <a href="#children_info" data-toggle="tab">
+				            子女信息
+				        </a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#trial_info" data-toggle="tab">
+				            审批信息
+				        </a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#remarks" data-toggle="tab">
+				            备注
+				        </a>
+				    </li>
+				</ul>
+	        <div class="modal-body tab-content">
+	        	<div class="tab-pane fade" id="self_info">
+					<div class="basic_info">
+						<div class="basic_left_info fl">
+							<ul>
+								<li>
+									户籍区划地址：<span>四川省成都市青羊区金沙街道办事处</span>
+								</li>
+								<li>
+									家庭地址：<span>成都市青羊区同一路9号</span>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										姓名：<span>张三</span>
+									</div>
+									<div class="basicInfo_span fl">
+										身份证号：<span>513822199745345323</span>
+									</div>
+									<div class="fl">
+										性别：<span>女</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										出生日期：<span>1997-3-28</span>
+									</div>
+									<div class="basicInfo_span fl">
+										联系电话：<span>17389756385</span>
+									</div>
+									<div class="fl">
+										户口性质：<span>非农业</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										婚姻变动年月：<span>2013-4-5</span>
+									</div>
+									<div class="basicInfo_span fl">
+										婚姻状况：<span>再婚</span>
+									</div>
+									<div class="fl">
+										名族：<span>汉</span>
+									</div>
+								</li>
+								<div class="clearFix"></div>
+							</ul>
+						</div>
+						<div class="basic_right_img fl">
+							<img src="./images/headImg.png">
+						</div>
+						<div class="clearFix"></div>
+					</div>
+					<div id="tabContent_index" class="tab-content">
+						<form class="my_form">
+							<div class="form_head">
+								<label>审核信息</label>
+							</div>
+							<ul class="modal_formContent">
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">村核查员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">某某某某：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">核查日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">初审人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">初审日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">核查结果：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">初审意见：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+						    </ul>
+						</form>
+		            </div>
+	            </div>
+	            <div class="tab-pane fade" id="spouse_info">
+					<div class="basic_info">
+						<div class="basic_left_info fl">
+							<ul>
+								<li>
+									户籍区划地址：<span>四川省成都市青羊区金沙街道办事处</span>
+								</li>
+								<li>
+									家庭地址：<span>成都市青羊区同一路9号</span>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										姓名：<span>张三</span>
+									</div>
+									<div class="basicInfo_span fl">
+										身份证号：<span>513822199745345323</span>
+									</div>
+									<div class="fl">
+										性别：<span>女</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										出生日期：<span>1997-3-28</span>
+									</div>
+									<div class="basicInfo_span fl">
+										联系电话：<span>17389756385</span>
+									</div>
+									<div class="fl">
+										户口性质：<span>非农业</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										婚姻变动年月：<span>2013-4-5</span>
+									</div>
+									<div class="basicInfo_span fl">
+										婚姻状况：<span>再婚</span>
+									</div>
+									<div class="fl">
+										名族：<span>汉</span>
+									</div>
+								</li>
+								<div class="clearFix"></div>
+							</ul>
+						</div>
+						<div class="basic_right_img fl">
+							<img src="./images/headImg.png">
+						</div>
+						<div class="clearFix"></div>
+					</div>
+					<div id="tabContent_index" class="tab-content">
+						<form class="my_form">
+							<div class="form_head">
+								<label>审核信息</label>
+							</div>
+							<ul class="modal_formContent">
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">村核查员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">某某某某：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">核查日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">初审人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">初审日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">核查结果：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">初审意见：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+						    </ul>
+						</form>
+		            </div>
+	            </div>
+	            <div class="tab-pane fade in active" id="children_info">
+					<div class="basic_info">
+						<div class="basic_left_info fl">
+							<ul>
+								<li>
+									户籍区划地址：<span>四川省成都市青羊区金沙街道办事处</span>
+								</li>
+								<li>
+									家庭地址：<span>成都市青羊区同一路9号</span>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										姓名：<span>张三</span>
+									</div>
+									<div class="basicInfo_span fl">
+										身份证号：<span>513822199745345323</span>
+									</div>
+									<div class="fl">
+										性别：<span>女</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										出生日期：<span>1997-3-28</span>
+									</div>
+									<div class="basicInfo_span fl">
+										联系电话：<span>17389756385</span>
+									</div>
+									<div class="fl">
+										户口性质：<span>非农业</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										婚姻变动年月：<span>2013-4-5</span>
+									</div>
+									<div class="basicInfo_span fl">
+										婚姻状况：<span>再婚</span>
+									</div>
+									<div class="fl">
+										名族：<span>汉</span>
+									</div>
+								</li>
+								<div class="clearFix"></div>
+							</ul>
+						</div>
+						<div class="basic_right_img fl">
+							<img src="./images/headImg.png">
+						</div>
+						<div class="clearFix"></div>
+					</div>
+					<div id="tabContent_index" class="tab-content">
+						<form class="my_form">
+							<div class="form_head">
+								<label>审核信息</label>
+							</div>
+							<ul class="modal_formContent">
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">村核查员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">某某某某：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">核查日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">初审人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">初审日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">核查结果：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">初审意见：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+						    </ul>
+						</form>
+		            </div>
+	            </div>
+	            <div class="tab-pane fade" id="trial_info">
+					<div class="basic_info">
+						<div class="basic_left_info fl">
+							<ul>
+								<li>
+									户籍区划地址：<span>四川省成都市青羊区金沙街道办事处</span>
+								</li>
+								<li>
+									家庭地址：<span>成都市青羊区同一路9号</span>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										姓名：<span>张三</span>
+									</div>
+									<div class="basicInfo_span fl">
+										身份证号：<span>513822199745345323</span>
+									</div>
+									<div class="fl">
+										性别：<span>女</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										出生日期：<span>1997-3-28</span>
+									</div>
+									<div class="basicInfo_span fl">
+										联系电话：<span>17389756385</span>
+									</div>
+									<div class="fl">
+										户口性质：<span>非农业</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										婚姻变动年月：<span>2013-4-5</span>
+									</div>
+									<div class="basicInfo_span fl">
+										婚姻状况：<span>再婚</span>
+									</div>
+									<div class="fl">
+										名族：<span>汉</span>
+									</div>
+								</li>
+								<div class="clearFix"></div>
+							</ul>
+						</div>
+						<div class="basic_right_img fl">
+							<img src="./images/headImg.png">
+						</div>
+						<div class="clearFix"></div>
+					</div>
+					<div id="tabContent_index" class="tab-content">
+						<form class="my_form">
+							<div class="form_head">
+								<label>审核信息</label>
+							</div>
+							<ul class="modal_formContent">
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">村核查员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">某某某某：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">核查日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">初审人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">初审日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">核查结果：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">初审意见：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+						    </ul>
+						</form>
+		            </div>
+	            </div>
+	            <div class="tab-pane fade" id="remarks">
+					<div class="basic_info">
+						<div class="basic_left_info fl">
+							<ul>
+								<li>
+									户籍区划地址：<span>四川省成都市青羊区金沙街道办事处</span>
+								</li>
+								<li>
+									家庭地址：<span>成都市青羊区同一路9号</span>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										姓名：<span>张三</span>
+									</div>
+									<div class="basicInfo_span fl">
+										身份证号：<span>513822199745345323</span>
+									</div>
+									<div class="fl">
+										性别：<span>女</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										出生日期：<span>1997-3-28</span>
+									</div>
+									<div class="basicInfo_span fl">
+										联系电话：<span>17389756385</span>
+									</div>
+									<div class="fl">
+										户口性质：<span>非农业</span>
+									</div>
+								</li>
+								<li>
+									<div class="basicInfo_span fl">
+										婚姻变动年月：<span>2013-4-5</span>
+									</div>
+									<div class="basicInfo_span fl">
+										婚姻状况：<span>再婚</span>
+									</div>
+									<div class="fl">
+										名族：<span>汉</span>
+									</div>
+								</li>
+								<div class="clearFix"></div>
+							</ul>
+						</div>
+						<div class="basic_right_img fl">
+							<img src="./images/headImg.png">
+						</div>
+						<div class="clearFix"></div>
+					</div>
+					<div id="tabContent_index" class="tab-content">
+						<form class="my_form">
+							<div class="form_head">
+								<label>审核信息</label>
+							</div>
+							<ul class="modal_formContent">
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">村核查员：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">某某某某：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">核查日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="">
+										<div class="filtrate_item fl">
+											<span class="item_title">初审人：</span>
+											<div class="input_component">
+												<input type="text">
+											</div>
+										</div>
+										<div class="filtrate_item fl rightInput_modal">
+											<span class="">初审日期：</span>
+											<div class="time_component">
+												<input class="date_picker" name="" type="text">
+												<span class="iconfont icon-riqi-copy"></span>
+											</div>
+										</div>
+								    </div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">核查结果：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+								<li class="clearFix">
+									<div class="filtrate_item fl">
+										<span class="item_title">初审意见：</span>
+										<div class="input_component modal_longInput">
+											<input type="text">
+										</div>
+									</div>
+								</li>
+						    </ul>
+						</form>
+		            </div>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="button" data-dismiss="modal">审核通过</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+
 	<script type="text/javascript" src="./Plugin/jquery.min.js"></script>
     <script type="text/javascript" src="./Plugin/zTree/js/jquery.ztree.core.min.js"></script>
     <script type="text/javascript" src="./Plugin/zTree/js/jquery.ztree.excheck.min.js"></script>

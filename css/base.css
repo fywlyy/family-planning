@@ -302,3 +302,51 @@
 	line-height: 20px;
 	margin-left:15px;
 }
+
+/*模态框*/
+.myModal_header{
+	background: #31a59d;
+	color: #fff;
+	line-height: 30px;
+	padding: 0 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.mymodal_title{
+	line-height: 30px;
+	font-size: 16px;
+}
+
+.myModal_close{
+	line-height: 30px;
+	color: #fff;
+	font-size: 24px;
+	text-shadow: 0 0 0 #fff;
+    opacity: 1; 
+}
+
+.modal-content{
+	border: 1px solid #31a59d;
+}
+
+.modal-body{
+	padding: 10px;
+}
+
+.modal_formContent{
+	padding: 15px 5px;
+}
+
+.modal-dialog{
+	width: 750px;
+}
+
+.filtrate_item{
+	margin: 0 20px 12px 0;
+}
+
+.modal-footer{
+	border-top: none;
+	text-align: center;
+}
