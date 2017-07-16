@@ -222,86 +222,7 @@
 	margin-top: 5px;
 }
 
-.ui-jqgrid{
-	width:100%!important;
-}
-.ui-jqgrid .ui-jqgrid-view{
-	width:100%!important;
-	overflow-x: auto; 
-}
-.ui-jqgrid-bdiv{
-	height:auto!important;
-	overflow: hidden!important;
-}
-.ui-jqgrid-htable th{
-	background-color:#31a59d;
-	color:#fff;
-}
-.jqGrid_wrapper{
-	padding:20px 30px;
-	border-top:1px solid #31a59d;
-}
-.ui-jqgrid-view{
-	border:1px solid #31a59d;
-}
-.ui-jqgrid tr.ui-row-ltr td:last-child{
-	border-right:none;
-}
-.ui-jqgrid tr.ui-row-ltr td{
-	height:30px;
-	line-height: 30px;
-	border-color:#31a59d;
-}
-.ui-jqgrid tr.ui-row-ltr[aria-selected="true"] td{
-	color:red;
-}
-.ui-jqgrid-htable th + th{
-	height:30px!important;
-	font-weight: normal;
-	border:none!important;
-	border-left:1px solid #fff!important;
-}
-#jqGridPager{
-	margin-bottom:10px;
-}
-#jqGridPager .iconfont{
-	display: inline-block;
-	vertical-align: middle;
-	cursor:pointer;
-}
-#jqGridPager .icon-pagination-prev,#jqGridPager .icon-pagination-next{
-	font-size:18px;
-	color:#31a59d;
-}
-#jqGridPager .icon-sanjiaojiantou01{
-	padding-right:10px;
-	color:#31a59d;
-}
-#jqGridPager .icon-zhongchaosanjiaojiantou01{
-	padding-left:10px;
-	color:#31a59d;
-}
-#jqGridPager .icon-pagination-prev.isFirst,#jqGridPager .icon-sanjiaojiantou01.isFirst{
-	color:#666;
-}
-#jqGridPager .icon-pagination-next.isLast,#jqGridPager .icon-zhongchaosanjiaojiantou01.isLast{
-	color:#666;
-}
-#jqGridPager .input-pageNo{
-	display: inline-block;
-	vertical-align: middle;
-}
-#jqGridPager .input-pageNo input{
-	width:50px;
-	padding-left:5px;
-}
-#jqGridPager .button{
-	display: inline-block;
-	width:40px;
-	height:20px;
-	line-height: 20px;
-	margin-left:15px;
-}
+
 
 /*模态框*/
 .myModal_header{
@@ -349,4 +270,30 @@
 .modal-footer{
 	border-top: none;
 	text-align: center;
+}
+
+/*bootstrap table*/
+.bootstrap-table .fixed-table-header{
+	background-color: #31a59d;
+}
+.bootstrap-table .fixed-table-header .table th{
+	background-color: #31a59d;
+	border-color:#fff;
+    color: #fff;
+    font-weight: normal;
+}
+.bootstrap-table .fixed-table-body .table td{
+	border-color:#31a59d;
+	color: #31a59d;
+}
+.bootstrap-table .fixed-table-pagination .pagination > li > a{
+	color: #31a59d;
+}
+.bootstrap-table .fixed-table-pagination .pagination > li.active > a{
+	background-color:#31a59d;
+	color:#fff;
+}
+.bootstrap-table .fixed-table-pagination .dropdown-menu li.active > a{
+	background-color: #31a59d;
+	color:#fff;
 }
