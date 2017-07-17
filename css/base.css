@@ -273,18 +273,38 @@
 }
 
 /*bootstrap table*/
-.bootstrap-table .fixed-table-header{
+.table_module{
+	padding:20px;
+	border-top:1px solid #31a59d;
+}
+.bootstrap-table .fixed-table-header,.bootstrap-table .fixed-table-body{
+	outline: none;
 	background-color: #31a59d;
 }
-.bootstrap-table .fixed-table-header .table th{
+.bootstrap-table .fixed-table-header .table th,.bootstrap-table .fixed-table-body .table th{
 	background-color: #31a59d;
 	border-color:#fff;
     color: #fff;
     font-weight: normal;
 }
+.bootstrap-table .fixed-table-body .table{
+	border:1px solid #31a59d;
+}
+.bootstrap-table .fixed-table-body .table th{
+	border-bottom:none;
+}
+.bootstrap-table .fixed-table-body .table th + th{
+	border-left:1px solid #fff;
+}
 .bootstrap-table .fixed-table-body .table td{
 	border-color:#31a59d;
 	color: #31a59d;
+}
+.bootstrap-table .fixed-table-body .table td + td{
+	border-left:1px solid #31a59d;
+}
+.bootstrap-table .fixed-table-body .table .no-records-found td{
+	text-align: center;
 }
 .bootstrap-table .fixed-table-pagination .pagination > li > a{
 	color: #31a59d;
@@ -294,6 +314,7 @@
 	color:#fff;
 }
 .bootstrap-table .fixed-table-pagination .dropdown-menu li.active > a{
+	background-image:none;
 	background-color: #31a59d;
 	color:#fff;
 }
