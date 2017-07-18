@@ -279,7 +279,6 @@
 }
 .bootstrap-table .fixed-table-header,.bootstrap-table .fixed-table-body{
 	outline: none;
-	background-color: #31a59d;
 }
 .bootstrap-table .fixed-table-header .table th,.bootstrap-table .fixed-table-body .table th{
 	background-color: #31a59d;
