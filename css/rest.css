@@ -1,9 +1,9 @@
 /*css reset*/
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{ margin: 0; padding: 0; }
-body, button, input, select, textarea { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 100%; }
+body, button, input, select, textarea { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 pre { white-space: pre-wrap; /* css-3 */ white-space: -moz-pre-wrap; /* Mozilla, since 1999 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ word-wrap: break-word; /* Internet Explorer 5.5+ */ }
 input, button, select, textarea { outline: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-h1, h2, h3, h4, h5, h6 {font-size: 100%; }
+/*h1, h2, h3, h4, h5, h6 {font-size: 100%; }*/
 i,em{ font-style: normal; }
 a { text-decoration: none; background:transparent;-webkit-tap-highlight-color: transparent;}
 a:focus { outline: none; }
@@ -81,8 +81,8 @@ html,body{height:100%;margin: 0 auto;}
 }
 
 .form_head{
-	height: 20px;
-	line-height: 20px;
+	height: 25px;
+	line-height: 25px;
 	background: #ccc;
 	padding-left: 10px;
 }
