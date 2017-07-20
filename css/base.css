@@ -317,3 +317,6 @@
 	background-color: #31a59d;
 	color:#fff;
 }
+.modal-content .content-body{
+	padding:0 10px;
+}
