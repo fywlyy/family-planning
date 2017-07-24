@@ -118,7 +118,11 @@ $(function(){
             if($this.hasClass('startDate')){
                 $(".endDate[name='"+dateGroup+"']").datetimepicker('setStartDate',startDate);
             }
-        });     
+        });  
+
+        $this.next(".icon-riqi-copy").on('click',function(){
+            $this.focus();
+        });   
     });
 
     $(".select_component .checked_text").on("click",function(e){
